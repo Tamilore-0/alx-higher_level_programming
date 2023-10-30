@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-def calculate_value(a, b):
+def magic_calculation(a, b):
     return(98 + (a ** b))
