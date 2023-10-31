@@ -5,6 +5,3 @@ def islower(c):
             return True
         else:
             continue
-
-
-print()
