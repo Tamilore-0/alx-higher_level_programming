@@ -1,6 +1,6 @@
 # ALX high level programming
 ## Description
-
+.
 This repo contains all the topics covered in high level programming scheme of work of ALX.
 
 # Sub-repositories
