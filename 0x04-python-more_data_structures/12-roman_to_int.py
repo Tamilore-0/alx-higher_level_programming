@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if not isinstance(roman_string, str) or not roman_string:
+    if not isinstance(roman_string, str) or roman_string == None:
         return 0
     my_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     sum = 0
@@ -24,3 +24,5 @@ def roman_to_int(roman_string):
                 else:
                     sum -= my_dict[key]
     return abs(sum)
+roman_number = "aMaCbakjuhygtfreCaIV"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
