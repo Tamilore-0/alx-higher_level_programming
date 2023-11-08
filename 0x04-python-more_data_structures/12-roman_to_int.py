@@ -24,5 +24,3 @@ def roman_to_int(roman_string):
                 else:
                     sum -= my_dict[key]
     return abs(sum)
-roman_number = "aMaCbakjuhygtfreCaIV"
-print("{} = {}".format(roman_number, roman_to_int(roman_number)))
