@@ -17,4 +17,19 @@ def roman_to_int(roman_string):
                     sum += my_dict[key]
                 else:
                     sum -= my_dict[key]
+            else:
+                continue
     return abs(sum)
+roman_number = "MCMXCIV"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+roman_number = "VII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "MMMIXCXV"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "LXXXVII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "DCCVII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
