@@ -60,9 +60,10 @@ class Square:
         """
         sets the coordinates of the square
         """
-        if (not isinstance(value, tuple) or len(value) != 2 or \
-           not isinstance(value[0], int) or not isinstance(value[1], int) or \
-           value[0] < 0 or value[1] < 0):
+        if (not isinstance(value, tuple) or
+                len(value) != 2 or
+                not all(isinstance(num, int) for num in value) or
+                not all(num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
@@ -78,7 +79,6 @@ class Square:
         """
         if self.__size == 0:
             print("")
-            return
         else:
             if self.__position[1] > 0:
                 for _ in range(self.__position[1]):
