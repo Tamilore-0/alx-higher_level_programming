@@ -8,4 +8,4 @@ class Square:
 
     It represents a square and is currently empty.
     """
-    pass
+    ...
