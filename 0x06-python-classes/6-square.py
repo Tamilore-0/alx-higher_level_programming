@@ -37,12 +37,6 @@ class Square:
         """
         return self.__size
 
-    def position(self):
-        """
-        returns the coordinates of the square
-        """
-        return self.__pos
-
     @size.setter
     def size(self, value):
         """
@@ -53,6 +47,13 @@ class Square:
         elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
+
+    @property
+    def position(self):
+        """
+        returns the coordinates of the square
+        """
+        return self.__pos
 
     @position.setter
     def position(self, value):
