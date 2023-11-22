@@ -5,6 +5,9 @@ A module that defines a square class
 
 
 class Square:
+    """
+    Square class
+    """
     def __init__(self, size):
         """
         Initializes a new Square instance.
