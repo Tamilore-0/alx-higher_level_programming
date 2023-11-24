@@ -1,0 +1,56 @@
+# 5-text_indentation.txt
+
+=========================
+5-text_indentation module
+=========================
+
+``text_indentation()`` prints a text with 2 new lines,
+after each of these characters: ., ? and :
+
+::
+    # Importing the function
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+    # Testing
+
+    >>> text_indentation("hello. am: i a car?")
+    hello.
+    <BLANKLINE>
+    am:
+    <BLANKLINE>
+    i a car?
+    <BLANKLINE>
+
+    >>> text_indentation("""hello""")
+    hello
+
+    >>> text_indentation("hello", "hello")
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+    >>> text_indentation("hello", "hello", "hi")
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() takes 1 positional argument but 3 were given
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+    >>> text_indentation(True)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+    >>> text_indentation(['h', 'g', 'l'])
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
