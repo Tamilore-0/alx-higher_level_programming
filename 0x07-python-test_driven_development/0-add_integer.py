@@ -1,19 +1,14 @@
 #!/usr/bin/python3
 """
-A module for addition
+This module provides a function 'add_integer' for performing addition.
+The function takes two parameters:
+    'a' and 'b', then returns their sum.
 """
 
 
 def add_integer(a, b=98):
     """
     returns the addition of two numbers
-
-    Parameters:
-    a (int or float): first number
-    b (int or float): second number. Defaults to 98
-
-    Raises:
-    TypeError: If either a or b is not an integer or float.
     """
     if type(a) not in [int, float]:
         raise TypeError("a must be an integer")
