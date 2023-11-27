@@ -97,4 +97,4 @@ class Rectangle:
         """
         Destructor method for MyClass.
         """
-        print(f"Bye rectangle...\n")
+        print("Bye rectangle...")
