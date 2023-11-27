@@ -3,6 +3,7 @@
 Module with a Rectangle class for representing rectangles.
 """
 
+
 class Rectangle:
     """
     Rectangle class for representing rectangles.
@@ -22,7 +23,7 @@ class Rectangle:
         """
         self.__width = width
         self.__height = height
-    
+
     @property
     def width(self):
         """
@@ -31,7 +32,7 @@ class Rectangle:
         Returns:
         int: Width of the rectangle.
         """
-        return self.__width        
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -46,11 +47,11 @@ class Rectangle:
         - ValueError: If the provided value is less than 0.
         """
         if type(self.__width) is not int:
-           raise TypeError("width must be an integer")
+            raise TypeError("width must be an integer")
         if self.__width < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
-     
+
     @property
     def height(self):
         """
@@ -60,7 +61,7 @@ class Rectangle:
         int: Height of the rectangle.
         """
         return self.__height
-     
+
     @height.setter
     def height(self, value):
         """
@@ -78,3 +79,11 @@ class Rectangle:
         if self.__height < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+
+my_rectangle = Rectangle(2, 4)
+print(my_rectangle.__dict__)
+
+my_rectangle.width = 10
+my_rectangle.height = 3
+print(my_rectangle.__dict__)
