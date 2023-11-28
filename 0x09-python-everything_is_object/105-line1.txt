@@ -1,10 +1,1 @@
 262
-
-It turns out Python keeps an array of integer objects for “all integers between -5 and 256”.
-When we create an int in that range, we’re actually just getting a reference to the existing object in memory.
-
-If we set x = 42,
-we are actually performing a search in the integer block for the value in the range -5 to +257.
-Once x falls out of the scope of this range, it will be garbage collected (destroyed) and be an entirely different object.
-The process of creating a new integer object and then destroying it immediately creates a lot of useless calculation cycles,
-so Python preallocated a range of commonly used integers.
