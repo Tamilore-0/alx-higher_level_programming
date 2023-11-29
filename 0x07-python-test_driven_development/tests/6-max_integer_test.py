@@ -45,7 +45,3 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(self.test_duplicate, 40)
         self.assertEqual(self.test_large_num, 1000000000)
         self.assertEqual(self.test_zero, 0)
-
-
-if__name__ == '__main__':
-    unittest.main()
