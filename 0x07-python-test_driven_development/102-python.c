@@ -1,4 +1,4 @@
-#include <python3.10/Python.h>
+#include <Python.h>
 
 /**
 * print_python_string - Print information about a Python string object
