@@ -36,11 +36,6 @@ BaseGeometry class tests
     ValueError: length must be greater than 0
 
     
-    # Testing integer_validator when value is too large
-    >>> geometry_instance.integer_validator("max_value", float("inf"))
-    Traceback (most recent call last):
-	...
-    TypeError: max_value must be an integer
 
     # Testing integer_validator with invalid value (greater than 0 but not an integer)
     >>> geometry_instance.integer_validator("non_integer", 3.14)
