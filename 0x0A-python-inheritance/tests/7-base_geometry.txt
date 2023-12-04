@@ -36,8 +36,11 @@ BaseGeometry class tests
     ValueError: length must be greater than 0
 
     
-    # Testing integer_validator with valid maximum value
-    >>> geometry_instance.integer_validator("max_value", 999999999)
+    # Testing integer_validator when value is too large
+    >>> geometry_instance.integer_validator("max_value", float("inf"))
+    Traceback (most recent call last):
+	...
+    TypeError: max_value must be an integer
 
     # Testing integer_validator with invalid value (greater than 0 but not an integer)
     >>> geometry_instance.integer_validator("non_integer", 3.14)
@@ -73,19 +76,19 @@ BaseGeometry class tests
     >>> geometry_instance.integer_validator()
     Traceback (most recent call last):
         ...
-    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
     # Testing integer_validator with incomplete parameters
     >>> geometry_instance.integer_validator("john")
     Traceback (most recent call last):
         ...
-    TypeError: integer_validator() missing 1 required positional argument: 'value'
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
 
     # Testing integer_validator with incomplete parameters
     >>> geometry_instance.integer_validator(9)
     Traceback (most recent call last):
         ...
-    TypeError: integer_validator() missing 1 required positional argument: 'value'
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
 
     # Testing integer_validator with lists
     >>> geometry_instance.integer_validator("hola", [1, 2, 3])
