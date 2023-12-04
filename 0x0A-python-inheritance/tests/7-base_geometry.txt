@@ -50,3 +50,9 @@ BaseGeometry class tests
     Traceback (most recent call last):
         ...
     ValueError: negative_value must be greater than 0
+
+    # Testing integer_validator with boolean
+    >>> geometry_instance.integer_validator("hello", True)
+    Traceback (most recent call last):
+        ...
+    TypeError: hello must be an integer
