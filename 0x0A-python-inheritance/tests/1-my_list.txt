@@ -1,0 +1,38 @@
+# mylist_doctests.txt
+
+=======================
+Mylist module doctests
+=======================
+
+``Mylist`` is a class that extends the functionality of the built-in list class.
+
+::
+    # importing module
+    >>> Mylist = __import__('1-my_list').Mylist
+
+    # Creating an instance of Mylist
+    >>> my_list_instance = Mylist([4, 2, 8, 1, 6])
+
+    # Testing print_sorted method with integers
+    >>> my_list_instance.print_sorted()
+    [1, 2, 4, 6, 8]
+
+    # Testing print_sorted method with an empty list
+    >>> empty_list_instance = Mylist([])
+    >>> empty_list_instance.print_sorted()
+    []
+
+    # Testing print_sorted method with a list of strings
+    >>> string_list_instance = Mylist(['apple', 'banana', 'orange', 'grape'])
+    >>> string_list_instance.print_sorted()
+    ['apple', 'banana', 'grape', 'orange']
+
+    # Testing print_sorted method with duplicate integers
+    >>> duplicate_list_instance = Mylist([2, 4, 2, 6, 4, 8, 6, 1])
+    >>> duplicate_list_instance.print_sorted()
+    [1, 2, 2, 4, 4, 6, 6, 8]
+
+    # Testing print_sorted method with large integers
+    >>> large_int_list_instance = Mylist([1000000, 500000, 750000, 250000])
+    >>> large_int_list_instance.print_sorted()
+    [250000, 500000, 750000, 1000000]
