@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """
 Module: Mylist
 
@@ -7,7 +7,7 @@ which is a subclass of the built-in list class.
 """
 
 
-class Mylist(list):
+class MyList(list):
     """
     Mylist class extends the functionality of the built-in list class.
     """

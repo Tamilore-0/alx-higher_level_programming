@@ -4,11 +4,11 @@
 Mylist module doctests
 =======================
 
-``Mylist`` is a class that extends the functionality of the built-in list class.
+``MyList`` is a class that extends the functionality of the built-in list class.
 
 ::
     # importing module
-    >>> Mylist = __import__('1-my_list').Mylist
+    >>> Mylist = __import__('1-my_list').MyList
 
     # Creating an instance of Mylist
     >>> my_list_instance = Mylist([4, 2, 8, 1, 6])
