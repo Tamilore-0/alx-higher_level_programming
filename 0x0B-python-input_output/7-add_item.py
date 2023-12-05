@@ -10,11 +10,14 @@ load = __import__('6-load_from_json_file').load_from_json_file
 
 
 if __name__ == "__main__":
-    # Load an existing list or create an empty list
-    items_list = load('add_item.json') or []
+    
+    filename = "add_item.json"
 
-    # Add command line arguments to the list
-    items_list.extend(sys.argv[1:])
+    try:
+        arg_list = load(filename)
+    except:
+        arg_list = []
 
-    # Save the updated list to the file
-    save(items_list, 'add_item.json')
+    for arg in sys.argv[1:]:
+        arg_list.append(arg)
+    save(arg_list, filename)
