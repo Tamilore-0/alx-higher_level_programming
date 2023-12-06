@@ -5,19 +5,16 @@
 
 
 import sys
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+save = __import__('5-save_to_json_file').save_to_json_file
+load = __import__('6-load_from_json_file').load_from_json_file
 
 
 if __name__ == "__main__":
-    
-    filename = "add_item.json"
+    # Load an existing list or create an empty list
+    items_list = load('add_item.json') or []
 
-    try:
-        arg_list = load_from_json_file(filename)
-    except:
-        arg_list = []
+    # Add command line arguments to the list
+    items_list.extend(sys.argv[1:])
 
-    for arg in sys.argv[1:]:
-        arg_list.append(arg)
-    save_to_json_file(arg_list, filename)
+    # Save the updated list to the file
+    save(items_list, 'add_item.json')
