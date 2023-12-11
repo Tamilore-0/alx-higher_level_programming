@@ -10,7 +10,6 @@ import turtle
 import csv
 
 
-
 class Base:
     """
     Base class for managing object identities.
