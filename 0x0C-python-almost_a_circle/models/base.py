@@ -85,8 +85,6 @@ class Base:
         try:
             with open(filename, 'r') as file:
                 data = file.read()
-                if not data:
-                    return []
                 dictionaries = json.loads(data)
                 instances = [cls.create(**d) for d in dictionaries]
                 return instances
