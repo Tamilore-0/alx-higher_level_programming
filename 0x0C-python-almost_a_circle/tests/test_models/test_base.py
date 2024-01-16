@@ -1,9 +1,13 @@
+#!/usr/bin/python
+
+
 import os
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 from unittest.mock import mock_open, patch
+
 
 class TestBase(unittest.TestCase):
     def setUp(self):
