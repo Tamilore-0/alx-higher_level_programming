@@ -8,7 +8,6 @@ console.log(myObject);
 function incr () {
   this.value++;
 }
-
 // Attach the incr method to myObject
 myObject.incr = incr;
 
