@@ -1,7 +1,8 @@
 #!/usr/bin/node
 
 if (process.argv.length < 4) {
-  console.log('0');
+  const num = 0
+  console.log(num);
 } else {
   let largest = 0;
   let secondLargest = 0;
