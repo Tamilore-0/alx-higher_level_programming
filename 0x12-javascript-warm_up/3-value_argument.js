@@ -6,7 +6,7 @@ while (process.argv[count] !== undefined) {
 }
 
 if (count < 2) {
-  console.log('No arguments');
+  console.log('No argument');
 } else {
   console.log(process.argv[2]);
 }
