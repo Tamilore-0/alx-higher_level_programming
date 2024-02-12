@@ -1,17 +1,9 @@
 #!/usr/bin/node
 
-if (process.argv.length < 4) {
-  const num = 0
-  console.log(num);
+if (process.argv.length <= 3) {
+  console.log('0');
 } else {
-  let largest = 0;
-  let secondLargest = 0;
-  for (let i = 0; i < process.argv.length; i++) {
-    const number = parseInt(process.argv[i]);
-    if (number > largest) {
-      secondLargest = largest;
-      largest = number;
-    }
-  }
-  console.log(secondLargest);
+  const arr = process.argv.slice(2).map(Number);
+  const second = arr.sort((a, b) => b - a)[1];
+  console.log(second);
 }
