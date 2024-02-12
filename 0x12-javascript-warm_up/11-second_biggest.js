@@ -6,9 +6,10 @@ if (process.argv.length < 4) {
   let largest = 0;
   let secondLargest = 0;
   for (let i = 0; i < process.argv.length; i++) {
-    if (process.argv[i] > largest) {
+    number = parseInt(process.argv[i]);
+    if (number > largest) {
       secondLargest = largest;
-      largest = process.argv[i];
+      largest = number;
     }
   }
   console.log(secondLargest);
