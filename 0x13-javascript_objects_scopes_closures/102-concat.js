@@ -24,9 +24,7 @@ fs.readFile(fileA, 'utf8', (err, data) => {
     fs.appendFile(destinationFile, content, 'utf8', (err) => {
       if (err) {
         console.error('Error appending to file:', err);
-        return;
       }
     });
   });
 });
-
