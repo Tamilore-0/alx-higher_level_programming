@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""
+Define State class and Base instance
+"""
 
-import sqlalchemy
+
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -8,6 +11,9 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 class State(Base):
+    """
+    State class representing the states table in the database
+    """
     __tablename__ = 'states'
     
     id = Column(
