@@ -7,8 +7,8 @@ A script that adds the State object
 
 import sys
 from model_state import Base, State
-from sqlalchemy import create_engine, asc, func
-from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 
 def main():
@@ -41,7 +41,8 @@ def main():
 
         # Commit the transaction to the database
         session.commit()
-        print(new_state.id)
+        print('{0}'.format(new_state.id))
+
 
 
 if __name__ == '__main__':
