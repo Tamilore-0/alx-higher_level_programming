@@ -30,7 +30,7 @@ def main():
     # Create the cursor object
     cursor = conn.cursor()
 
-    cursor.execute('SELECT * FROM states WHERE name LIKE %s', ('N%',))
+    cursor.execute('SELECT * FROM states WHERE name LIKE N%')
 
     # Fetch all rows from the result set
     rows = cursor.fetchall()
