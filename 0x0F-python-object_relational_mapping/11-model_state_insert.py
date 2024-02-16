@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-A script that lists all State objects that contain
-the letter a from the database hbtn_0e_6_usa
+A script that adds the State object
+“Louisiana” to the database hbtn_0e_6_usa
 """
 
 
@@ -13,14 +13,15 @@ from sqlalchemy.orm import sessionmaker, Session
 
 def main():
     """
-    Main function that lists all State objects that
-    contain the letter a from the database hbtn_0e_6_usa.
+    Main function that adds the State object “Louisiana”
+    to the database hbtn_0e_6_usa
     """
     # Store connection details
-    if (len(sys.argv) == 4):
+    if (len(sys.argv) == 5):
         username = sys.argv[1]
         password = sys.argv[2]
         database_name = sys.argv[3]
+        state_to_search = sys.argv[4]
     else:
         print("Incomplete arguments")
 
@@ -33,15 +34,15 @@ def main():
 
     # Create a new session object bound to the engine
     with sessionmaker(bind=engine)() as session:
-        # Search for states that contain "a"
-        records = session.query(State).filter(
-            func.binary(State.name).like('%a%')
-            ).order_by(asc(State.id))
+        # create new State object
+        new_state = State(name=state_to_search)
 
-        if records:
-            # Print states that contain "a"
-            for record in records:
-                print(f"{record.id}: {record.name}")
+        # Add the new State to the session
+        session.add(new_state)
+
+        # Commit the transaction to the database
+        session.commit()
+        print(new_state.id)
 
 
 if __name__ == '__main__':
