@@ -32,7 +32,7 @@ def main():
     # Create a cursor object
     cursor = conn.cursor()
 
-    cursor.execute('SELECT * FROM states WHERE name = %s', (name_to_search,))
+    cursor.execute('SELECT * FROM states WHERE name = "{}"'.format(name_to_search))
 
     # Fetch records from the result set
     rows = cursor.fetchall()
