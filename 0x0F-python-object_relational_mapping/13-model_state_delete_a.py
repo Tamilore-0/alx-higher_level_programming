@@ -1,20 +1,20 @@
 #!/usr/bin/python3
 """
-A script that changes the name of a State
-object from the database hbtn_0e_6_usa
+A script that deletes all State objects with a name
+containing the letter a from the database hbtn_0e_6_usa
 """
 
 
 import sys
 from model_state import Base, State
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, func
 from sqlalchemy.orm import sessionmaker
 
 
 def main():
     """
-    Main function that changes the name
-    of a State object from the database hbtn_0e_6_usa
+    Main function that deletes all State objects with a name
+    containing the letter a from the database hbtn_0e_6_usa
     """
     # Store connection details
     if (len(sys.argv) == 4):
@@ -33,12 +33,13 @@ def main():
 
     # Create a new session object bound to the engine
     with sessionmaker(bind=engine)() as session:
-        # Update object whose id is 2
-        record = session.query(State).filter(State.id == 2).first()
-
-        if record:
-            record.name = "New Mexico"
-            # Kepp changes
+        # Searches for states containing 'a'
+        records = session.query(State). \
+            filter(func.binary(State.name).like('%a%'))
+        # Deletes found objects
+        if records:
+            for record in records:
+                session.delete(record)
             session.commit()
 
 
