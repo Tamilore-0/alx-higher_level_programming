@@ -21,7 +21,6 @@ def main():
         username = sys.argv[1]
         password = sys.argv[2]
         database_name = sys.argv[3]
-        state_to_search = sys.argv[4]
     else:
         print("Incomplete arguments")
 
@@ -35,7 +34,7 @@ def main():
     # Create a new session object bound to the engine
     with sessionmaker(bind=engine)() as session:
         # create new State object
-        new_state = State(name=state_to_search)
+        new_state = State(name='Louisiana')
 
         # Add the new State to the session
         session.add(new_state)
