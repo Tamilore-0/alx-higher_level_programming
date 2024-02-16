@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-A script that connects to a MySQL database and retrieves all
-states from the 'states' table, printing their IDs and names.
+A script that prints the first State object from the database hbtn_0e_6_usa.
 """
 
 
@@ -13,7 +12,8 @@ from sqlalchemy.orm import sessionmaker, Session
 
 def main():
     """
-    Main function that lists all State objects from the database hbtn_0e_6_usa
+    Main function that prints the first State
+    object from the database hbtn_0e_6_usa.
     """
     # Store connection details
     if (len(sys.argv) == 4):
@@ -23,7 +23,7 @@ def main():
     else:
         print("Incomplete arguments")
 
-    # Connecting to MySQL server using mysql-python DBAPI
+    # Creating a connection to MySQL server using mysql-python DBAPI
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'.format(
             username, password, database_name
@@ -31,10 +31,13 @@ def main():
     )
 
     # Create a new session object bound to the engine
-    session = sessionmaker(bind=engine)()
-    # Query all states from the 'states' table and print their IDs
-    for instance in session.query(State).order_by(State.id):
-        print(f"{instance.id}: {instance.name}")
+    with sessionmaker(bind=engine)() as session:
+        # Query all states from the 'states' table and print their IDs
+        record = session.query(State).first()
+        if (record is None):
+            print()
+        else:
+            print(f"{record.id}: {record.name}")
 
 
 if __name__ == '__main__':
