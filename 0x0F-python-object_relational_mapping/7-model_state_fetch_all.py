@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-A script that connects to a MySQL database and retrieves all states from the 'states' table,
-printing their IDs and names.
+A script that connects to a MySQL database and retrieves all
+states from the 'states' table, printing their IDs and names.
 """
 
 
 import sys
 from model_state import Base, State
-from sqlalchemy import  create_engine
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
 
 
@@ -20,7 +20,7 @@ def main():
     else:
         print("Incomplete arguments")
 
-    # Connecting to MySQL server using mysql-python DBAPI 
+    # Connecting to MySQL server using mysql-python DBAPI
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'.format(
             username, password, database_name
