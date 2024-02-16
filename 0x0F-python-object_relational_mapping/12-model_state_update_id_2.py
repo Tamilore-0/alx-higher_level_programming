@@ -35,7 +35,7 @@ def main():
     with sessionmaker(bind=engine)() as session:
         # Update object whose id is 2
         record = session.query(State).filter(State.id == 2).first()
-        
+
         if record:
             record.name = "New Mexico"
             # Kepp changes
