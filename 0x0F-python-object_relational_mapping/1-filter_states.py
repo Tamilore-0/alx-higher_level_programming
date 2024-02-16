@@ -30,7 +30,8 @@ def main():
     # Create the cursor object
     cursor = conn.cursor()
 
-    cursor.execute('SELECT * FROM states WHERE name \
+    cursor.execute(
+        'SELECT * FROM states WHERE name \
         LIKE BINARY "N%" ORDER BY states.id ASC'
     )
 
