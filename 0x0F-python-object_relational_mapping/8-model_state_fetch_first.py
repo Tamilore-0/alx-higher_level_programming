@@ -35,7 +35,7 @@ def main():
         # Query all states from the 'states' table and print their IDs
         record = session.query(State).first()
         if (record is None):
-            print()
+            print("Nothing")
         else:
             print(f"{record.id}: {record.name}")
 
