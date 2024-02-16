@@ -30,7 +30,9 @@ def main():
     # Create the cursor object
     cursor = conn.cursor()
 
-    cursor.execute('SELECT * FROM states WHERE name LIKE "N%" ORDER BY states.id ASC')
+    cursor.execute('SELECT * FROM states WHERE name \
+        LIKE BINARY "N%" ORDER BY states.id ASC'
+    )
 
     # Fetch all rows from the result set
     rows = cursor.fetchall()
