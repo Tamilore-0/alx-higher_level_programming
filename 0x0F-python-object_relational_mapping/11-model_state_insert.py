@@ -34,14 +34,10 @@ def main():
     # Create a new session object bound to the engine
     with sessionmaker(bind=engine)() as session:
         # create new State object
-        new_state = State(name='Louisiana')
-
-        # Add the new State to the session
-        session.add(new_state)
-
-        # Commit the transaction to the database
+        lou_state = State(name='Louisiana')
+        session.add(lou_state)
         session.commit()
-        print('{0}'.format(new_state.id))
+        print('{0}'.format(lou_state.id))
 
 
 
