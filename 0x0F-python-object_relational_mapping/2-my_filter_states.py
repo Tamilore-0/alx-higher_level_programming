@@ -33,7 +33,8 @@ def main():
     cursor = conn.cursor()
 
     cursor.execute(
-        'SELECT * FROM states WHERE name = "{}" ORDER BY states.id ASC'.format(
+        'SELECT * FROM states WHERE name \
+        LIKE BINARY "{}" ORDER BY states.id ASC'.format(
             name_to_search
         )
     )
