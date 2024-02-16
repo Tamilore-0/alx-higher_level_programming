@@ -17,7 +17,7 @@ def main():
     to the database hbtn_0e_6_usa
     """
     # Store connection details
-    if (len(sys.argv) == 5):
+    if (len(sys.argv) == 4):
         username = sys.argv[1]
         password = sys.argv[2]
         database_name = sys.argv[3]
@@ -34,11 +34,14 @@ def main():
     # Create a new session object bound to the engine
     with sessionmaker(bind=engine)() as session:
         # create new State object
-        lou_state = State(name='Louisiana')
-        session.add(lou_state)
-        session.commit()
-        print('{0}'.format(lou_state.id))
+        new_state = State(name='Louisiana')
 
+        # Add the new State to the session
+        session.add(new_state)
+
+        # Commit the transaction to the database
+        session.commit()
+        print(new_state.id)
 
 
 if __name__ == '__main__':
