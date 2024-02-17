@@ -33,7 +33,7 @@ def main():
         #     State(name="California", cities=[City(name="San Francisco")])
             
         new_city = City(name="San Francisco")
-        n_state = State(name="Carlifornia")
+        n_state = State(name="California")
         n_state.cities.append(new_city)
         
         
