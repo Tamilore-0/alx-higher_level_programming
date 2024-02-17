@@ -31,7 +31,7 @@ def main():
         states = session.query(State).order_by(asc(State.id))
         for state in states:
             for city in state.cities:
-                print(f"{city.name} -> {state.name}")
+                print(f"{city.id}: {city.name} -> {state.name}")
 
 
 if __name__ == '__main__':
