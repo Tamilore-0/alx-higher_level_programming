@@ -5,6 +5,7 @@ Define State class and Base instance
 
 
 from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
 # Create declarative base class for mapping
@@ -29,3 +30,5 @@ class State(Base):
         String(128),
         nullable=False
     )
+    
+    cities = relationship("City", back_populates="state")
