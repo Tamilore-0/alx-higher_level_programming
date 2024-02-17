@@ -29,4 +29,3 @@ class State(Base):
         String(128),
         nullable=False
     )
-
