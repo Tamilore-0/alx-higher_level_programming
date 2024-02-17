@@ -30,5 +30,5 @@ class State(Base):
         String(128),
         nullable=False
     )
-    
+
     cities = relationship("City", back_populates="state")
