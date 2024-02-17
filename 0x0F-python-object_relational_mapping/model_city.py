@@ -18,7 +18,6 @@ class City(Base):
     id = Column(
         Integer,
         autoincrement=True,
-        unique=True,
         nullable=False,
         primary_key=True,
     )
@@ -35,4 +34,4 @@ class City(Base):
         nullable=False
     )
 
-    state = relationship("State", back_populates="cities")
+    state = relationship("State")

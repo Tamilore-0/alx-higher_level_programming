@@ -21,7 +21,6 @@ class State(Base):
     id = Column(
         Integer,
         autoincrement=True,
-        unique=True,
         nullable=False,
         primary_key=True
     )
@@ -31,4 +30,3 @@ class State(Base):
         nullable=False
     )
 
-    cities = relationship("City", back_populates="state")
