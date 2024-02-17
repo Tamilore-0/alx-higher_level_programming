@@ -28,15 +28,10 @@ def main():
 
     # Create a new session object bound to the engine
     with sessionmaker(bind=engine)() as session:
-        # new_city = City(name="San Francisco")
+        # Create a new state object and linked City object
+        new_state = \
+            State(name="California", cities=[City(name="San Francisco")])
 
-        # new_state = State(name="California")
-        
-        # new_state.cities.append(new_city)
-        
-        new_state = State(name="California", cities=[City(name="San Francisco")])
-        
-        
         session.add(new_state)
         session.commit()
 
