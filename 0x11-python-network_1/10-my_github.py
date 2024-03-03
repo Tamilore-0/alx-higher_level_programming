@@ -11,9 +11,10 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
 
-    data = {"name": username} 
+    data = {"name": username}
     headers = {"Authorization": f"Bearer {password}"}
-    response = requests.get("https://api.github.com/user", data=data, headers=headers)
+    url = "https://api.github.com/user"
+    response = requests.get(url, data=data, headers=headers)
 
     try:
         json_data = response.json()
