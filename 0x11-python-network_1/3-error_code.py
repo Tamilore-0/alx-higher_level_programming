@@ -5,6 +5,7 @@ URL and displays the body of the response (decoded in utf-8).
 """
 import urllib.request
 import sys
+import urllib.error
 
 url = sys.argv[1]
 
@@ -13,5 +14,5 @@ try:
 	with urllib.request.urlopen(req) as response:
 		content = response.read().decode('utf-8')
 		print(content)
-except Exception as e:
+except urllib.error.HTTPError as e:
 	print(f"Error code: {e.code}")
