@@ -11,10 +11,13 @@ if __name__ == "__main__":
 
     url = f"https://api.github.com/repos/{owner_name}/{repository_name}/commits"
     response = requests.get(url)
-    json_data = response.json()
 
-    for(i = 0; i < 10; i++):
-        if type(json_data[i]) is dict:
-            commit_id = json_data[i]['sha']
-            committer = json_data[i]['commit']['author']['name']
+    try:
+        json_data = response.json()
+
+        for i in range(10):
+            commit_id = json_data[i].get('sha')
+            committer = json_data[i].get('commit').get('author').get('name')
             print(f"{commit_id}: {committer}")
+    except Exception as e:
+        pass
