@@ -12,10 +12,9 @@ if __name__ == "__main__":
     url = f"https://api.github.com/repos/{owner_name}/{repository_name}/commits"
     response = requests.get(url)
     json_data = response.json()
-    i = 0
 
-    while i < 10:
-        commit_id = json_data[i]['sha']
-        committer = json_data[i]['commit']['author']['name']
-        print(f"{commit_id}: {committer}")
-        i = i + 1
+    for(i = 0; i < 10; i++):
+        if type(json_data[i]) is dict:
+            commit_id = json_data[i]['sha']
+            committer = json_data[i]['commit']['author']['name']
+            print(f"{commit_id}: {committer}")
